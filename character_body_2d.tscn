@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpdlf4emqp064"]
+
+[ext_resource type="Texture2D" uid="uid://cxb6phc1l8ajw" path="res://icon.svg" id="1_f50pn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ij6vw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f50pn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghijl"]
+radius = 63.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -65)
+sprite_frames = SubResource("SpriteFrames_ij6vw")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -63)
+shape = SubResource("CircleShape2D_ghijl")
