@@ -79,17 +79,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
-radius = 8.0
-height = 32.0
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -18.5)
+position = Vector2(-1, -18.5)
 sprite_frames = SubResource("SpriteFrames_6t5aa")
 animation = &"move"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -15.5)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_v0iea")
