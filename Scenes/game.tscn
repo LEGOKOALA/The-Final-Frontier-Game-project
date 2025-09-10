@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://bdg8e5iwe0jy6" path="res://Scenes/killzone.tscn" id="3_3dryh"]
-[ext_resource type="PackedScene" uid="uid://d2e1jja3wsgji" path="res://Scenes/player.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="4_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -143,8 +143,8 @@ sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 [node name="Game" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(639, -251)
-scale = Vector2(1.24333, 0.641667)
+position = Vector2(883, -390)
+scale = Vector2(2.08167, 1.75417)
 texture = ExtResource("1_ebmjs")
 
 [node name="TileMap" type="TileMap" parent="."]
