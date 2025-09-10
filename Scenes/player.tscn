@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://du3df0d8gnhaf"]
+[gd_scene load_steps=14 format=3 uid="uid://du3df0d8gnhaf"]
 
+[ext_resource type="Script" uid="uid://np0b7klv0diu" path="res://Scenes/Scripts/Player.cs" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c3o5pba3j0odj" path="res://Assets/Astronaut Player/Astronaut Player.png" id="1_v0iea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
@@ -82,6 +83,7 @@ animations = [{
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -18.5)
