@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://du3df0d8gnhaf"]
+[gd_scene load_steps=5 format=3 uid="uid://d2e1jja3wsgji"]
 
 [ext_resource type="Script" uid="uid://np0b7klv0diu" path="res://Scripts/Player.cs" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c3o5pba3j0odj" path="res://Assets/Astronaut Player/Astronaut Player.png" id="1_v0iea"]
