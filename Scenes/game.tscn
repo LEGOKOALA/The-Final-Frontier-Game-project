@@ -152,8 +152,8 @@ sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 [node name="Game" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(883, -390)
-scale = Vector2(2.08167, 1.75417)
+position = Vector2(294.999, 92.251)
+scale = Vector2(1.10167, 0.950418)
 texture = ExtResource("1_ebmjs")
 
 [node name="TileMap" type="TileMap" parent="."]
