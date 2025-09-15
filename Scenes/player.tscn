@@ -81,6 +81,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 7.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
@@ -92,5 +93,5 @@ animation = &"move"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_v0iea")
