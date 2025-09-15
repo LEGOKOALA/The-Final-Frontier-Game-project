@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://kuvenhtg24sj"]
+[gd_scene load_steps=7 format=3 uid="uid://kuvenhtg24sj"]
 
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
-[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bdg8e5iwe0jy6" path="res://Scenes/killzone.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://d2e1jja3wsgji" path="res://Scenes/player.tscn" id="4_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
@@ -140,8 +140,6 @@ texture = ExtResource("2_qxrlw")
 [sub_resource type="TileSet" id="TileSet_wrm1d"]
 sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
-
 [node name="Game" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -166,11 +164,5 @@ position = Vector2(122, 111)
 position = Vector2(62, -18)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 limit_bottom = 140
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(86, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_3dryh")
