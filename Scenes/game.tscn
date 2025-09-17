@@ -235,6 +235,8 @@ zoom = Vector2(3, 3)
 limit_bottom = 140
 position_smoothing_enabled = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+
 [node name="Moving platform" parent="." instance=ExtResource("5_wowpa")]
 position = Vector2(383, -17)
 
