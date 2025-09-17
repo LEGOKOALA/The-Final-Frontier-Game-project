@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://u7ld7733b5jh"]
+
+[ext_resource type="Texture2D" uid="uid://b2cspey17032j" path="res://Assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship1/Exhaust/Normal_flight/Exhaust2/exhaust1.png" id="1_w1pos"]
+[ext_resource type="Texture2D" uid="uid://cg3nkb76qlmhj" path="res://Assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship1/Exhaust/Normal_flight/Exhaust2/exhaust2.png" id="2_73rgl"]
+[ext_resource type="Texture2D" uid="uid://by7fsdgbicv8c" path="res://Assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship1/Exhaust/Normal_flight/Exhaust2/exhaust3.png" id="3_dkysl"]
+[ext_resource type="Texture2D" uid="uid://4kcuopwximxb" path="res://Assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship1/Exhaust/Normal_flight/Exhaust2/exhaust4.png" id="4_byhkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itc6d"]
+atlas = ExtResource("1_w1pos")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjy2f"]
+atlas = ExtResource("2_73rgl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj1g0"]
+atlas = ExtResource("3_dkysl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut4vv"]
+atlas = ExtResource("4_byhkv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81pxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itc6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjy2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj1g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut4vv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_81pxl")
+autoplay = "default"
+frame_progress = 0.623382
