@@ -226,6 +226,7 @@ layer_1/tile_data = PackedInt32Array(-3670034, 1, 0, -3604498, 1, 1, -3538962, 1
 position = Vector2(122, 111)
 
 [node name="Killzone" parent="Area2D" instance=ExtResource("3_3dryh")]
+script = null
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wowpa")]
 position = Vector2(395, -37)
