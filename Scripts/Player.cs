@@ -6,9 +6,27 @@ public partial class Player : CharacterBody2D
 	public const float Speed = 130.0f;
 	public const float JumpVelocity = -200.0f;
 
+	[Signal]
+	public delegate void DiedEventHandler();
+
+	public void Die()
+	{
+		// Emit a signal for other parts of the game (like a UI) to know the player died.
+		EmitSignal(SignalName.Died);
+
+		// For this example, we simply hide the player and disable collision.
+		// More advanced games might use a respawn system, an animation, or destroy the node.
+		QueueFree(); // Deletes the player node from the scene tree.
+
+		// OR:
+		// SetProcessMode(ProcessModeEnum.Disabled); // Stops processing for the player.
+		// Hide(); // Hides the player mesh or sprite.
+		// GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
+
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -36,5 +54,8 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+
+
+
 	}
 }
