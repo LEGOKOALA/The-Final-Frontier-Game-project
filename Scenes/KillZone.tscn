@@ -9,3 +9,5 @@ script = ExtResource("1_1yg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("WorldBoundaryShape2D_47cqi")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
