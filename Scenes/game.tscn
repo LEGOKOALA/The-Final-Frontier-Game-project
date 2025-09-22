@@ -243,7 +243,6 @@ motion_mirroring = Vector2(1200, 1200)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 z_index = -1
 position = Vector2(496, 79)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ebmjs")
 
 [node name="KillZone" parent="." instance=ExtResource("5_i6g32")]
