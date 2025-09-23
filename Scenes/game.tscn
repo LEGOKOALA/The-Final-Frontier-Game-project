@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
-[ext_resource type="Shader" uid="uid://bjcap3lw43d86" path="res://Scenes/game.gdshader" id="7_1l0tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -208,8 +207,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0tm"]
 size = Vector2(430, 94)
 
+[sub_resource type="Shader" id="Shader_i6g32"]
+code = "shader_type fog;
+
+void fog() {
+	// Called once for every froxel that is touched by an axis-aligned bounding box
+	// of the associated FogVolume. This means that froxels that just barely touch
+	// a given FogVolume will still be used.
+}
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v158k"]
-shader = ExtResource("7_1l0tm")
+shader = SubResource("Shader_i6g32")
 
 [node name="Game" type="Node2D"]
 
@@ -283,7 +292,19 @@ material = SubResource("ShaderMaterial_v158k")
 offset_left = 2.0
 offset_top = -33.0
 offset_right = 194.0
-offset_bottom = 31.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 0.878)
+
+[node name="ColorRect3" type="ColorRect" parent="CaveEntranceDarken"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 7
+texture_filter = 1
+material = SubResource("ShaderMaterial_v158k")
+offset_left = 242.0
+offset_top = 16.0
+offset_right = 434.0
+offset_bottom = 64.0
 color = Color(0, 0, 0, 0.878)
 
 [connection signal="body_entered" from="CaveEntranceDarken" to="CaveEntranceDarken" method="OnBodyEntered"]
