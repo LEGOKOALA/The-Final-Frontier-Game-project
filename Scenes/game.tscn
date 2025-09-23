@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://d2e1jja3wsgji" path="res://Scenes/player.tscn" id="4_wowpa"]
-[ext_resource type="PackedScene" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
+[ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
