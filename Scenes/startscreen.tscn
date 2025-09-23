@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkhtobsx5cysl"]
+
+[ext_resource type="Script" uid="uid://bbavk8h411hrc" path="res://Scripts/Button.cs" id="1_a8mag"]
+
+[node name="startscreen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -373.0
+offset_top = -157.0
+offset_right = 372.0
+offset_bottom = 158.0
+color = Color(0, 0, 0, 0.563)
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = -73.0
+offset_top = -17.0
+offset_right = 76.0
+offset_bottom = 19.0
+action_mode = 0
+text = "Start"
+script = ExtResource("1_a8mag")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
