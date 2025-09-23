@@ -38,6 +38,7 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
+			
 		}
 
 		// Get the input direction and handle the movement/deceleration.
@@ -46,10 +47,18 @@ public partial class Player : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("move");
+			if (velocity.x>0){
+				GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH=false;
+			}
+			else if(velocity.x<0){
+				
+			}
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("idle");
 		}
 
 		Velocity = velocity;
