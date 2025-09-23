@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://d2e1jja3wsgji" path="res://Scenes/player.tscn" id="4_wowpa"]
 [ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
-[ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
-[ext_resource type="Shader" uid="uid://bjcap3lw43d86" path="res://Scenes/game.gdshader" id="7_1l0tm"]
+[ext_resource type="Script" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
+[ext_resource type="Shader" path="res://Scenes/game.gdshader" id="7_1l0tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
