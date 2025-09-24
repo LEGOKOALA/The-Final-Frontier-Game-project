@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kuvenhtg24sj"]
+[gd_scene load_steps=16 format=3 uid="uid://kuvenhtg24sj"]
 
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://0xdl1crij615" path="res://Scenes/asteroid.tscn" id="7_1l0tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -330,6 +331,74 @@ offset_top = -1.0
 offset_right = 304.0
 offset_bottom = 16.0
 color = Color(0, 0, 0, 0.878)
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="Asteroid" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(-64, -387)
+
+[node name="Asteroid2" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1109, -554)
+
+[node name="Asteroid15" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1109, -554)
+
+[node name="Asteroid16" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1893, -917)
+
+[node name="Asteroid17" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1695, -733)
+
+[node name="Asteroid18" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1708, -546)
+
+[node name="Asteroid19" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(2048, -707)
+
+[node name="Asteroid20" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1363, -642)
+
+[node name="Asteroid21" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1690, -938)
+
+[node name="Asteroid22" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1372, -845)
+
+[node name="Asteroid3" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1132, -734)
+
+[node name="Asteroid4" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(665, -829)
+
+[node name="Asteroid5" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(926, -796)
+
+[node name="Asteroid6" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(1381, -432)
+
+[node name="Asteroid7" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(853, -597)
+
+[node name="Asteroid8" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(673, -535)
+
+[node name="Asteroid9" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(596, -706)
+
+[node name="Asteroid10" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(204, -426)
+
+[node name="Asteroid11" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(461, -473)
+
+[node name="Asteroid12" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(292, -567)
+
+[node name="Asteroid13" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(330, -745)
+
+[node name="Asteroid14" parent="Asteroids" instance=ExtResource("7_1l0tm")]
+position = Vector2(60, -639)
 
 [connection signal="body_entered" from="CaveEntranceDarken" to="CaveEntranceDarken" method="OnBodyEntered"]
 [connection signal="body_exited" from="CaveEntranceDarken" to="CaveEntranceDarken" method="_on_body_exited"]

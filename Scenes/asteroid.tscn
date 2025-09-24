@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://0xdl1crij615"]
+
+[ext_resource type="Script" uid="uid://3eg7xk75j43q" path="res://Scripts/Asteroid.cs" id="1_a2bka"]
+[ext_resource type="Texture2D" uid="uid://csxyswgkikwy3" path="res://Assets/PixelStarshipsPackage_Asteroids_01.png" id="2_rvlwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi0dy"]
+atlas = ExtResource("2_rvlwq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfhhd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi0dy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2ils"]
+radius = 12.0
+
+[node name="Asteroid" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_a2bka")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(0.257813, 0.257813)
+sprite_frames = SubResource("SpriteFrames_rfhhd")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f2ils")
