@@ -1,16 +1,11 @@
 using Godot;
 using System;
 
-public partial class GameState : Node
-{
-	public static bool GameStarted = false;
-}
-
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 130.0f;
-	public const float JumpVelocity = -200.0f;
-	public int Health = 100;
+	public float Speed = 120.0f;
+	public const float JumpVelocity = -60.0f;
+	public const float Gravity = 60.0f;
 
 	[Signal]
 	public delegate void DiedEventHandler();
@@ -21,40 +16,43 @@ public partial class Player : CharacterBody2D
 		QueueFree();
 	}
 
-	public void TakeDamage(int damage)
-	{
-		Health -= damage;
-		if (Health <= 0)
-		{
-			Die();
-		}
-	}
-
 	public override void _PhysicsProcess(double delta)
 	{
-		if (!GameState.GameStarted)
-			return;
-
 		Vector2 velocity = Velocity;
 
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			velocity.Y += Gravity * (float)delta;
+			Speed = 85.0f;
+		}
+		
+		else
+		{
+			Speed = 120.0f;
 		}
 
 		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
+			
 		}
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("move");
+			if (velocity.X>0){
+				GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH=false;
+			}
+			else if(velocity.X<0){
+				GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH=true;
+			}
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("idle");
 		}
 
 		Velocity = velocity;
