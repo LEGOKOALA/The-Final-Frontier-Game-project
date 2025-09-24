@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://boij4bndq5hwm"]
 
 [ext_resource type="Texture2D" uid="uid://dqamhu3mptsf2" path="res://Assets/PixelStarshipsPackage_Asteroids_01.png" id="1_nni62"]
-[ext_resource type="Script" uid="uid://dca4g6fno2n1" path="res://Scripts/Astroid.cs" id="1_ra0cc"]
+[ext_resource type="Script" uid="uid://dca4g6fno2n1" path="res://Scripts/Asteroid.cs" id="1_ra0cc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ra0cc"]
 atlas = ExtResource("1_nni62")
@@ -24,7 +24,7 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_duo7p"]
 radius = 9.0
 
-[node name="Astroid" type="CharacterBody2D"]
+[node name="Asteroid" type="CharacterBody2D"]
 script = ExtResource("1_ra0cc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
