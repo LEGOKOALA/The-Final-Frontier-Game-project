@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float Speed = 130.0f;
+	public float Speed = 120.0f;
 	public const float JumpVelocity = -60.0f;
 	public const float Gravity = 60.0f;
 
@@ -23,7 +23,12 @@ public partial class Player : CharacterBody2D
 		if (!IsOnFloor())
 		{
 			velocity.Y += Gravity * (float)delta;
-			Speed = 85.0f;
+			Speed = 75.0f;
+		}
+		
+		else
+		{
+			Speed = 120.0f;
 		}
 
 		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
