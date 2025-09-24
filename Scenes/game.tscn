@@ -308,34 +308,8 @@ position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 
-[node name="Node" type="Node2D" parent="."]
-
-[node name="Astroid" parent="Node" instance=ExtResource("7_1l0tm")]
+[node name="Astroid" parent="." instance=ExtResource("7_1l0tm")]
 position = Vector2(-71, -396)
-
-[node name="Astroid2" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(106, -461)
-
-[node name="Astroid3" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(56, -390)
-
-[node name="Astroid4" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(41, -285)
-
-[node name="Astroid5" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(209, -458)
-
-[node name="Astroid6" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(167, -391)
-
-[node name="Astroid7" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(168, -316)
-
-[node name="Astroid8" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(335, -461)
-
-[node name="Astroid9" parent="Node" instance=ExtResource("7_1l0tm")]
-position = Vector2(312, -366)
 
 [connection signal="body_entered" from="CaveEntranceDarken" to="CaveEntranceDarken" method="OnBodyEntered"]
 [connection signal="body_exited" from="CaveEntranceDarken" to="CaveEntranceDarken" method="_on_body_exited"]
