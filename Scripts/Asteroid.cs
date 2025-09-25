@@ -14,7 +14,7 @@ public partial class Asteroid : CharacterBody2D
 		startPos = Position;
 	}
 
-	public override void _PhysicsProcess(double delta)
+	public async override void _PhysicsProcess(double delta)
 	{
 
 		Velocity = new Vector2(1, 1).Normalized() * Speed;
@@ -22,9 +22,11 @@ public partial class Asteroid : CharacterBody2D
 		if (collision != null)
 		{
 			GetNode<AnimatedSprite2D>("explosion").Visible = true;
+			await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
 			if (collision.GetCollider() is Player player)
 				player.Die();
 			Position = startPos;
+			GetNode<AnimatedSprite2D>("explosion").Visible = false;
 		}
 		Rotation += RotationSpeed * (float)delta;
 	}
