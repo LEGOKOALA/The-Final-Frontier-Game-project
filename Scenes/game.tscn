@@ -478,10 +478,10 @@ color = Color(0, 0, 0, 0.878)
 shape = SubResource("RectangleShape2D_v158k")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 2042.0
-offset_top = -121.0
-offset_right = 2359.0
-offset_bottom = -67.0
+offset_left = 2049.0
+offset_top = -88.0
+offset_right = 2366.0
+offset_bottom = -34.0
 theme_override_fonts/font = ExtResource("7_1l0tm")
 theme_override_font_sizes/font_size = 16
 text = "Well done!!! You 
