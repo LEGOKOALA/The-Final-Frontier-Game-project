@@ -23,7 +23,7 @@ public partial class Player : CharacterBody2D
 		if (!IsOnFloor())
 		{
 			velocity.Y += Gravity * (float)delta;
-			Speed = 90.0f;
+			Speed = 85.0f;
 		}
 		
 		else
