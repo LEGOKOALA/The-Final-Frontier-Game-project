@@ -1,21 +1,31 @@
 using Godot;
 using System;
-using System.Collections.Generic;
 
 public partial class Asteroid : CharacterBody2D
 {
-	private float rotation_random = 5.0f;
-	private float speed = 1000.0f;
-	private float player_x = 1.0f;
-	private float player_y = 1.0f;
+	public float Speed = 100f;
+	public float RotationSpeed = 0.5f;
+	private Vector2 startPos;
+	
+	
+
+	public override void _Ready()
+	{
+		startPos = Position;
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		RotationDegrees += (float)rotation_random;
-		Vector2 velocity = Velocity;
-		velocity.X = (float)(player_x * speed * delta);
-		velocity.Y = (float)(player_y * speed * delta);
-		Velocity = velocity;
-		MoveAndSlide();
+
+		Velocity = new Vector2(1, 1).Normalized() * Speed;
+		KinematicCollision2D collision = MoveAndCollide(Velocity * (float)delta);
+		if (collision != null)
+		{
+			GetNode<AnimatedSprite2D>("explosion").Visible = true;
+			if (collision.GetCollider() is Player player)
+				player.Die();
+			Position = startPos;
+		}
+		Rotation += RotationSpeed * (float)delta;
 	}
 }

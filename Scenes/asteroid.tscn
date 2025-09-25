@@ -1,7 +1,23 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1nuvnvkdu00m"]
+[gd_scene load_steps=31 format=3 uid="uid://b1nuvnvkdu00m"]
 
 [ext_resource type="Script" uid="uid://3eg7xk75j43q" path="res://Scripts/Asteroid.cs" id="1_a2bka"]
 [ext_resource type="Texture2D" uid="uid://bjrdjeyks0b0p" path="res://Assets/VFX Free Pack/Effect_BigHit/60fps/Spritesheets/Effect_BigHit_1_516x528.png" id="2_a2bka"]
+[ext_resource type="Texture2D" uid="uid://crtg8lb5tqiuu" path="res://Assets/PixelStarshipsPackage_Asteroids_01 (1).png" id="2_rvlwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lnd8"]
+atlas = ExtResource("2_rvlwq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jv0kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lnd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi0dy"]
 region = Rect2(256, 0, 128, 128)
@@ -172,18 +188,26 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f2ils"]
-radius = 12.0
+radius = 9.0
 
 [node name="Asteroid" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_a2bka")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.499997, -0.25)
+scale = Vector2(-0.2, -0.166)
+sprite_frames = SubResource("SpriteFrames_jv0kg")
+
+[node name="explosion" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-1.90735e-06, -1.90735e-06)
 scale = Vector2(0.257813, 0.257813)
 sprite_frames = SubResource("SpriteFrames_rfhhd")
 frame_progress = 0.242649
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_f2ils")
+
+[node name="Timer" type="Timer" parent="."]

@@ -14,6 +14,8 @@ public partial class Player : CharacterBody2D
 	{
 		EmitSignal(SignalName.Died);
 		QueueFree();
+		var currentScene = GetTree().CurrentScene;
+			GetTree().ReloadCurrentScene();
 	}
 
 	public override void _PhysicsProcess(double delta)
