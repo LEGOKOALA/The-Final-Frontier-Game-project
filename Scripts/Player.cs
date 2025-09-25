@@ -4,7 +4,7 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public float Speed = 120.0f;
-	public const float JumpVelocity = -60.0f;
+	public const float JumpVelocity = -100.0f;
 	public const float Gravity = 60.0f;
 
 	[Signal]
