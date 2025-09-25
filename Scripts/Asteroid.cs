@@ -22,11 +22,12 @@ public partial class Asteroid : CharacterBody2D
 		if (collision != null)
 		{
 			GetNode<AnimatedSprite2D>("explosion").Visible = true;
-			await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
 			if (collision.GetCollider() is Player player)
 				player.Die();
+			await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
 			Position = startPos;
 			GetNode<AnimatedSprite2D>("explosion").Visible = false;
+			
 		}
 		Rotation += RotationSpeed * (float)delta;
 	}
