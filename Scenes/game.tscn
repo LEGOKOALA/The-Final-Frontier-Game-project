@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://kuvenhtg24sj"]
+[gd_scene load_steps=20 format=4 uid="uid://kuvenhtg24sj"]
 
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
+[ext_resource type="FontFile" uid="uid://rgqqenbyjdr8" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="7_1l0tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6g32"]
 texture = ExtResource("2_qxrlw")
@@ -341,6 +342,8 @@ _data = {
 &"platform move": SubResource("Animation_wowpa")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0tm"]
 size = Vector2(430, 94)
 
@@ -356,6 +359,8 @@ void fog() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v158k"]
 shader = SubResource("Shader_i6g32")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v158k"]
 
 [node name="Game" type="Node2D"]
 
@@ -402,6 +407,9 @@ texture = ExtResource("1_ebmjs")
 [node name="KillZone" parent="." instance=ExtResource("5_i6g32")]
 position = Vector2(11, 300)
 collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
 
 [node name="CaveEntranceDarken" type="Area2D" parent="."]
 position = Vector2(1572, -63)
@@ -467,6 +475,24 @@ offset_top = -1.0
 offset_right = 304.0
 offset_bottom = 16.0
 color = Color(0, 0, 0, 0.878)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2042.0
+offset_top = -121.0
+offset_right = 2359.0
+offset_bottom = -67.0
+theme_override_fonts/font = ExtResource("7_1l0tm")
+theme_override_font_sizes/font_size = 16
+text = "Well done!!! You 
+have finished the 
+game!!!"
+
+[node name="KillZone2" parent="." instance=ExtResource("5_i6g32")]
+position = Vector2(2136, -21)
+scale = Vector2(2.95264, 2.14916)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone2"]
+shape = SubResource("RectangleShape2D_v158k")
 
 [connection signal="body_entered" from="CaveEntranceDarken" to="CaveEntranceDarken" method="OnBodyEntered"]
 [connection signal="body_exited" from="CaveEntranceDarken" to="CaveEntranceDarken" method="_on_body_exited"]
