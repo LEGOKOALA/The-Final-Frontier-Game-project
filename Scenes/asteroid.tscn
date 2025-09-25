@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b1nuvnvkdu00m"]
+[gd_scene load_steps=31 format=3 uid="uid://cflmhv3qsp5gw"]
 
 [ext_resource type="Script" uid="uid://3eg7xk75j43q" path="res://Scripts/Asteroid.cs" id="1_a2bka"]
 [ext_resource type="Texture2D" uid="uid://bjrdjeyks0b0p" path="res://Assets/VFX Free Pack/Effect_BigHit/60fps/Spritesheets/Effect_BigHit_1_516x528.png" id="2_a2bka"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://iurbwpiajyd2"]
+
+[ext_resource type="FontFile" uid="uid://rgqqenbyjdr8" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_i8r30"]
+
+[node name="StartScreen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -216.0
+offset_top = -112.0
+offset_right = 216.0
+offset_bottom = 93.0
+color = Color(0, 0, 0, 0.475)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -80.0
+offset_top = -32.0
+offset_right = 80.0
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("1_i8r30")
+theme_override_font_sizes/font_size = 24
+text = "START"

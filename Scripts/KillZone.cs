@@ -1,23 +1,20 @@
 using Godot;
 using System;
 
-public partial class KillZone : Area2D 
+public partial class KillZone : Area2D
 {
-	
+	public override void _Ready()
+	{
+		BodyEntered += OnBodyEntered;
+	}
+
 	private void OnBodyEntered(Node2D body)
 	{
-		
-		if (body is Player)
+		if (body is Player player)
 		{
-			
-			((Player)body).Die();
-			GD.Print("Player entered kill zone!");
-	
-			var currentScene = GetTree().CurrentScene;
-
-			GetTree().ReloadCurrentScene();
-
-			GD.Print("Player died and scene reset.");
+			player.Die();
+			var scenePath = GetTree().CurrentScene.SceneFilePath;
+			GetTree().ChangeSceneToFile(scenePath);
 		}
 	}
 }
