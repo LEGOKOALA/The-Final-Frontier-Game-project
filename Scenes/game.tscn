@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://kuvenhtg24sj"]
+[gd_scene load_steps=20 format=4 uid="uid://kuvenhtg24sj"]
 
 [ext_resource type="Texture2D" uid="uid://vc6aa6mcucn" path="res://Assets/spacebg.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://d0e17mjqlc1jk" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
 [ext_resource type="FontFile" uid="uid://rgqqenbyjdr8" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://b1nuvnvkdu00m" path="res://Scenes/asteroid.tscn" id="7_v158k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6g32"]
 texture = ExtResource("2_qxrlw")
@@ -486,6 +487,47 @@ theme_override_font_sizes/font_size = 16
 text = "Well done!!! You 
 have finished the 
 game!!!"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Asteroid" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(-32, -290)
+
+[node name="Asteroid2" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(654, -341)
+
+[node name="Asteroid3" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(404, -710)
+
+[node name="Asteroid4" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(735, -645)
+
+[node name="Asteroid5" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(473, -377)
+
+[node name="Asteroid6" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(594, -648)
+
+[node name="Asteroid7" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(619, -475)
+
+[node name="Asteroid8" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(-25, -590)
+
+[node name="Asteroid9" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(251, -618)
+
+[node name="Asteroid10" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(446, -539)
+
+[node name="Asteroid11" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(125, -354)
+
+[node name="Asteroid12" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(306, -398)
+
+[node name="Asteroid13" parent="Node2D" instance=ExtResource("7_v158k")]
+position = Vector2(64, -468)
 
 [connection signal="body_entered" from="CaveEntranceDarken" to="CaveEntranceDarken" method="OnBodyEntered"]
 [connection signal="body_exited" from="CaveEntranceDarken" to="CaveEntranceDarken" method="_on_body_exited"]
