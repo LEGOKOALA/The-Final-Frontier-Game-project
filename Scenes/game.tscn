@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2300l8uixo1u" path="res://Scenes/KillZone.tscn" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://50l4v2ioptrn" path="res://Scenes/Platform.tscn" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://ceojjbrj4l8eg" path="res://Scripts/CaveEntranceDarken.cs" id="6_i6g32"]
-[ext_resource type="PackedScene" uid="uid://0xdl1crij615" path="res://Scenes/asteroid.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://b1nuvnvkdu00m" path="res://Scenes/asteroid.tscn" id="7_1l0tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
